@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divakar Thammishetti | Star Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-border {
+            position: relative;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
+        }
+    </style>
+</head>
+<body class="bg-[#020617] text-slate-200">
+
+    <nav class="fixed w-full z-50 glass top-0">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter">DIVAKAR<span class="text-blue-500">.</span>T</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="https://www.linkedin.com/in/divakar-thammishetti/" target="_blank" class="text-blue-400 border border-blue-400/30 px-4 py-1.5 rounded-full hover:bg-blue-400/10 transition">LinkedIn Profile</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+            
+            <div class="gradient-border mb-8 shadow-2xl shadow-blue-500/20">
+                <img 
+                    src="https://media.licdn.com/dms/image/v2/D4D03AQFbW0xvY4Cq8g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731470126996?e=1778112000&v=beta&t=zNhC6agIMRZv_sUUVQSuPickFpPpmR9tC_Ldak5fel4" 
+                    alt="Divakar Thammishetti" 
+                    class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover bg-slate-800"
+                >
+            </div>
+
+            <h2 class="text-blue-400 font-bold tracking-[0.2em] uppercase text-sm mb-4">Engineering Excellence</h2>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
+                Divakar Thammishetti
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
+                Full-stack architect specializing in building robust, scalable digital products. 
+                Transforming complex business logic into elegant, high-performance code.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-xl transition shadow-lg shadow-blue-600/20">
+                    View Portfolio
+                </a>
+                <a href="mailto:your-email@example.com" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 rounded-xl transition border border-slate-700">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 border-y border-slate-800/50 bg-slate-900/30">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-3xl font-bold text-white">5+</p>
+                <p class="text-slate-500 text-sm uppercase tracking-widest">Years Exp.</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-white">50+</p>
+                <p class="text-slate-500 text-sm uppercase tracking-widest">Projects</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-white">100%</p>
+                <p class="text-slate-500 text-sm uppercase tracking-widest">Commitment</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-white">24/7</p>
+                <p class="text-slate-500 text-sm uppercase tracking-widest">Innovation</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-2">Selected Works</h3>
+                    <p class="text-slate-400">A glimpse into my technical journey.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group relative bg-slate-900 rounded-2xl p-8 border border-slate-800 hover:border-blue-500/50 transition duration-500">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-blue-500/10 rounded-lg text-blue-400">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="text-slate-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Cloud Infrastructure Automation</h4>
+                    <p class="text-slate-400 mb-6 text-sm">Orchestrating multi-region deployments using Terraform and Kubernetes for high availability.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] uppercase font-bold tracking-wider bg-slate-800 px-2 py-1 rounded text-slate-300">AWS</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider bg-slate-800 px-2 py-1 rounded text-slate-300">Terraform</span>
+                    </div>
+                </div>
+
+                <div class="group relative bg-slate-900 rounded-2xl p-8 border border-slate-800 hover:border-purple-500/50 transition duration-500">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg text-purple-400">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="text-slate-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Real-time Analytics Engine</h4>
+                    <p class="text-slate-400 mb-6 text-sm">Processing millions of data points per second with sub-millisecond latency using Go and Redis.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] uppercase font-bold tracking-wider bg-slate-800 px-2 py-1 rounded text-slate-300">Go</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider bg-slate-800 px-2 py-1 rounded text-slate-300">Redis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-3xl mx-auto bg-gradient-to-br from-blue-600 to-purple-700 rounded-3xl p-12 shadow-2xl shadow-blue-900/40">
+            <h3 class="text-3xl font-bold text-white mb-4">Ready to build something amazing?</h3>
+            <p class="text-blue-100 mb-8 opacity-80">Currently open to new opportunities and interesting collaborations.</p>
+            <a href="mailto:divakar@example.com" class="bg-white text-blue-700 font-bold px-10 py-4 rounded-full hover:scale-105 transition-transform inline-block">
+                Let's Talk
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-slate-900 text-center text-slate-600 text-sm">
+        <p>&copy; 2024 Divakar Thammishetti. Built with Tailwind & Lucide.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
