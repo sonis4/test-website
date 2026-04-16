@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Divakar Thammishetti | Dev Runner Portfolio</title>
+    <title>Divakar Thammishetti | Flappy Sphere</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -14,12 +14,12 @@
             margin: 0 auto; 
             cursor: pointer;
             background: linear-gradient(to bottom, #0f172a, #1e293b);
-            touch-action: none; /* Prevents mobile scrolling on the canvas itself */
+            touch-action: none;
         }
         .game-container { 
             position: relative; 
             width: 100%; 
-            max-width: 800px; 
+            max-width: 600px; 
             margin: 0 auto; 
             border-radius: 1.5rem; 
             overflow: hidden;
@@ -37,83 +37,48 @@
             z-index: 10; 
             backdrop-filter: blur(4px);
         }
-        .stats-card {
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
     </style>
 </head>
 <body class="bg-[#020617] text-slate-200">
 
-    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+    <nav class="p-6 flex justify-between items-center max-w-4xl mx-auto">
         <span class="text-2xl font-extrabold tracking-tighter text-white">DIVAKAR<span class="text-blue-500">.</span>T</span>
-        <div class="flex gap-4">
-            <a href="https://www.linkedin.com/in/divakar-thammishetti/" target="_blank" class="flex items-center gap-2 text-sm font-bold bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-500 transition">
-                <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
-            </a>
-        </div>
+        <a href="https://www.linkedin.com/in/divakar-thammishetti/" target="_blank" class="bg-blue-600 px-5 py-2 rounded-full text-xs font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-600/20">
+            <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
+        </a>
     </nav>
 
-    <section class="pt-10 pb-20 px-6">
-        <div class="max-w-4xl mx-auto text-center mb-10">
-            <h1 class="text-5xl font-extrabold text-white mb-4 tracking-tight">The Career Sprint</h1>
-            <p class="text-slate-400 text-lg">Avoid the technical debt and reach the production milestone.</p>
+    <section class="pt-6 pb-20 px-6">
+        <div class="max-w-xl mx-auto text-center mb-6">
+            <h1 class="text-4xl font-extrabold text-white mb-2 tracking-tight">Flappy Sphere</h1>
+            <p class="text-slate-400 text-sm italic">Avoid the obstacles to reach Production!</p>
         </div>
 
         <div class="game-container border border-slate-800">
             <div id="game-overlay">
-                <div class="bg-blue-500/20 p-4 rounded-2xl mb-6">
-                    <i data-lucide="gamepad-2" class="w-12 h-12 text-blue-400"></i>
+                <div class="bg-blue-500/20 p-4 rounded-2xl mb-4">
+                    <i data-lucide="wing" class="w-10 h-10 text-blue-400 animate-pulse"></i>
                 </div>
-                <h2 class="text-3xl font-black mb-2" id="status-text">READY, DIVAKAR?</h2>
-                <p class="text-slate-400 mb-8 uppercase tracking-widest text-sm text-center px-4">Space to Jump (No Scroll!) / Tap to Start</p>
-                <button onclick="startGame()" class="bg-white text-black hover:bg-blue-400 hover:text-white px-10 py-4 rounded-xl font-black transition-all transform hover:scale-105 active:scale-95">
+                <h2 class="text-2xl font-black mb-1" id="status-text">TAP TO FLAP</h2>
+                <p class="text-slate-400 mb-6 uppercase tracking-widest text-[10px]">Space / Tap to Fly</p>
+                <button onclick="startGame()" class="bg-white text-black hover:bg-blue-400 hover:text-white px-8 py-3 rounded-xl font-black transition-all transform hover:scale-105">
                     START SPRINT
                 </button>
             </div>
             <canvas id="gameCanvas"></canvas>
         </div>
         
-        <div class="max-w-4xl mx-auto mt-8 grid grid-cols-2 gap-4">
-            <div class="stats-card p-4 rounded-2xl text-center">
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Current Score</p>
-                <p id="current-score" class="text-3xl font-black text-blue-400">0</p>
+        <div class="max-w-xl mx-auto mt-6 grid grid-cols-2 gap-4">
+            <div class="bg-slate-900/50 p-3 rounded-xl text-center border border-slate-800">
+                <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Score</p>
+                <p id="current-score" class="text-2xl font-black text-blue-400">0</p>
             </div>
-            <div class="stats-card p-4 rounded-2xl text-center">
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">High Score</p>
-                <p id="high-score" class="text-3xl font-black text-purple-400">0</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-slate-900/30 border-t border-slate-800/50">
-        <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-            <div>
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                    <i data-lucide="user" class="text-blue-500"></i> About the Developer
-                </h3>
-                <p class="text-slate-400 leading-relaxed text-lg">
-                    I am a Star Developer focused on building high-stakes applications. Just like in this game, I navigate complex challenges, optimize for performance, and never stop moving forward.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                    <i data-lucide="code-2" class="text-blue-500"></i> Tech Arsenal
-                </h3>
-                <div class="flex flex-wrap gap-3">
-                    <span class="bg-slate-800/80 px-4 py-2 rounded-xl text-sm font-bold border border-slate-700">React / Next.js</span>
-                    <span class="bg-slate-800/80 px-4 py-2 rounded-xl text-sm font-bold border border-slate-700">Node.js</span>
-                    <span class="bg-slate-800/80 px-4 py-2 rounded-xl text-sm font-bold border border-slate-700">AWS Cloud</span>
-                    <span class="bg-slate-800/80 px-4 py-2 rounded-xl text-sm font-bold border border-slate-700">PostgreSQL</span>
-                </div>
+            <div class="bg-slate-900/50 p-3 rounded-xl text-center border border-slate-800">
+                <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Best Run</p>
+                <p id="high-score" class="text-2xl font-black text-purple-400">0</p>
             </div>
         </div>
     </section>
-
-    <footer class="py-10 text-center text-slate-600 text-sm border-t border-slate-900">
-        <p>&copy; 2026 Divakar Thammishetti. Built with precision.</p>
-    </footer>
 
     <script>
         const canvas = document.getElementById('gameCanvas');
@@ -123,151 +88,122 @@
         const scoreEl = document.getElementById('current-score');
         const highScoreEl = document.getElementById('high-score');
 
-        canvas.width = 800;
-        canvas.height = 350;
+        canvas.width = 400;
+        canvas.height = 500;
 
-        const playerImg = new Image();
-        playerImg.src = 'https://media.licdn.com/dms/image/v2/D4D03AQFbW0xvY4Cq8g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731470126996?e=1778112000&v=beta&t=zNhC6agIMRZv_sUUVQSuPickFpPpmR9tC_Ldak5fel4'; 
+        const faceImg = new Image();
+        faceImg.src = 'https://media.licdn.com/dms/image/v2/D4D03AQFbW0xvY4Cq8g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731470126996?e=1778112000&v=beta&t=zNhC6agIMRZv_sUUVQSuPickFpPpmR9tC_Ldak5fel4'; 
 
-        const player = {
-            x: 80,
-            y: 250,
-            radius: 35,
-            dy: 0,
-            jumpForce: 13,
-            gravity: 0.65,
-            isGrounded: false,
-            rotation: 0
-        };
+        const GRAVITY = 0.28;
+        const FLAP_STRENGTH = -5.5;
+        const PIPE_SPEED = 2.5;
+        const PIPE_SPAWN_RATE = 95; 
+        const PIPE_GAP = 160;
+        const PIPE_WIDTH = 70; // Slightly wider for text
 
-        let obstacles = [];
+        let bird = { x: 50, y: 250, radius: 22, dy: 0, rotation: 0, flapFrame: 0 };
+        let pipes = [];
         let score = 0;
         let highScore = 0;
         let gameActive = false;
         let frame = 0;
 
-        const obstacleTypes = ["INTERNS","BKL","BUGS", "LEGACY CODE", "DEADLINES", "UNEXPECTED REBOOT", "MERGE CONFLICTS"];
+        const obstacleLabels = ["BUGS", "LEGACY", "DEADLINE", "REBOOT", "CONFLICT"];
 
         function startGame() {
-            score = 0;
-            scoreEl.innerText = "0";
-            obstacles = [];
-            player.y = 250;
-            player.dy = 0;
-            player.rotation = 0;
-            gameActive = true;
-            overlay.style.display = 'none';
-            requestAnimationFrame(animate);
+            score = 0; scoreEl.innerText = "0";
+            pipes = []; bird.y = 250; bird.dy = 0;
+            gameActive = true; overlay.style.display = 'none';
+            frame = 0; requestAnimationFrame(animate);
         }
 
-        function jump() {
-            if (player.isGrounded && gameActive) {
-                player.dy = -player.jumpForce;
-                player.isGrounded = false;
-            }
+        function flap() { if (gameActive) { bird.dy = FLAP_STRENGTH; bird.flapFrame = 1; } }
+
+        window.addEventListener('keydown', (e) => { if (e.code === 'Space') { e.preventDefault(); flap(); } });
+        canvas.addEventListener('mousedown', flap);
+        canvas.addEventListener('touchstart', (e) => { if(gameActive) { e.preventDefault(); flap(); } }, { passive: false });
+
+        function spawnPipe() {
+            const minHeight = 60;
+            const maxHeight = canvas.height - PIPE_GAP - minHeight;
+            const topHeight = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight;
+            const label = obstacleLabels[Math.floor(Math.random() * obstacleLabels.length)];
+            pipes.push({ x: canvas.width, topHeight, label, passed: false });
         }
 
-        // CONTROL HANDLERS (Space & Touch Fixes)
-        window.addEventListener('keydown', (e) => { 
-            if (e.code === 'Space') {
-                e.preventDefault(); // STOP SCROLLING
-                jump();
-            }
-        });
+        function drawBird(ctx, b, faceImg) {
+            ctx.save();
+            ctx.translate(b.x + b.radius, b.y + b.radius);
+            b.rotation = Math.min(Math.PI / 4, Math.max(-Math.PI / 4, b.dy * 0.1));
+            ctx.rotate(b.rotation);
 
-        canvas.addEventListener('mousedown', (e) => {
-            jump();
-        });
+            // Wings
+            ctx.fillStyle = '#f8fafc'; ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 1;
+            if (b.flapFrame > 0 && b.flapFrame < 8) b.flapFrame++; else b.flapFrame = 0;
+            const wingY = (b.flapFrame > 0 && b.flapFrame < 4) ? -12 : 6;
 
-        canvas.addEventListener('touchstart', (e) => {
-            if(gameActive) {
-                e.preventDefault(); // STOP MOBILE SCROLL/ZOOM
-                jump();
-            }
-        }, { passive: false });
+            ctx.beginPath(); ctx.moveTo(-b.radius, 0); ctx.lineTo(-b.radius-20, wingY); ctx.lineTo(-b.radius-15, wingY+15); ctx.fill(); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(b.radius, 0); ctx.lineTo(b.radius+20, wingY); ctx.lineTo(b.radius+15, wingY+15); ctx.fill(); ctx.stroke();
 
-        function spawnObstacle() {
-            const label = obstacleTypes[Math.floor(Math.random() * obstacleTypes.length)];
-            const speed = 6 + (score / 150);
-            obstacles.push({
-                x: canvas.width + 100,
-                y: canvas.height - 50,
-                width: 120,
-                height: 40,
-                label: label,
-                speed: speed
-            });
+            // Sphere
+            ctx.save();
+            ctx.beginPath(); ctx.arc(0, 0, b.radius, 0, Math.PI * 2); ctx.clip();
+            ctx.fillStyle = '#3b82f6'; ctx.fill();
+            if (faceImg.complete) ctx.drawImage(faceImg, -b.radius, -b.radius, b.radius*2, b.radius*2);
+            ctx.restore();
+
+            ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = 3;
+            ctx.beginPath(); ctx.arc(0, 0, b.radius, 0, Math.PI * 2); ctx.stroke();
+            ctx.restore();
         }
 
         function animate() {
             if (!gameActive) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Physics logic
-            player.dy += player.gravity;
-            player.y += player.dy;
+            bird.dy += GRAVITY;
+            bird.y += bird.dy;
 
-            if (player.y + player.radius > canvas.height - 10) {
-                player.y = canvas.height - 10 - player.radius;
-                player.dy = 0;
-                player.isGrounded = true;
-                player.rotation += 0.12;
-            } else {
-                player.rotation += 0.18;
-            }
+            if (bird.y + bird.radius*2 > canvas.height || bird.y < 0) gameOver();
 
-            // Draw Rotation with Transform
-            ctx.save();
-            ctx.translate(player.x, player.y);
-            ctx.rotate(player.rotation);
-            
-            ctx.beginPath();
-            ctx.arc(0, 0, player.radius, 0, Math.PI * 2);
-            ctx.clip();
-            
-            if (playerImg.complete && playerImg.naturalWidth !== 0) {
-                ctx.drawImage(playerImg, -player.radius, -player.radius, player.radius * 2, player.radius * 2);
-            } else {
-                ctx.fillStyle = '#3b82f6';
-                ctx.fill();
-            }
+            drawBird(ctx, bird, faceImg);
 
-            ctx.restore();
-            ctx.strokeStyle = '#3b82f6';
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.arc(player.x, player.y, player.radius, 0, Math.PI * 2);
-            ctx.stroke();
+            if (frame % PIPE_SPAWN_RATE === 0) spawnPipe();
 
-            if (frame % 90 === 0) spawnObstacle();
-            
-            obstacles.forEach((obs, index) => {
-                obs.x -= obs.speed;
-                ctx.fillStyle = '#1e293b';
-                ctx.strokeStyle = '#ef4444';
-                ctx.lineWidth = 2;
-                ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
-                ctx.strokeRect(obs.x, obs.y, obs.width, obs.height);
+            pipes.forEach((p, index) => {
+                p.x -= PIPE_SPEED;
+                const bottomY = p.topHeight + PIPE_GAP;
+                const bottomHeight = canvas.height - bottomY;
+
+                // Draw Pipes
+                ctx.fillStyle = '#1e293b'; ctx.strokeStyle = '#ef4444'; ctx.lineWidth = 3;
+                ctx.fillRect(p.x, 0, PIPE_WIDTH, p.topHeight); ctx.strokeRect(p.x, 0, PIPE_WIDTH, p.topHeight);
+                ctx.fillRect(p.x, bottomY, PIPE_WIDTH, bottomHeight); ctx.strokeRect(p.x, bottomY, PIPE_WIDTH, bottomHeight);
+
+                // Draw Text on Pillars
+                ctx.save();
+                ctx.fillStyle = 'rgba(239, 68, 68, 0.4)';
+                ctx.font = 'bold 12px Plus Jakarta Sans';
+                ctx.textAlign = 'center';
                 
-                ctx.fillStyle = '#ef4444';
-                ctx.font = 'bold 10px Sans-Serif';
-                ctx.textAlign = "center";
-                ctx.fillText(obs.label, obs.x + obs.width/2, obs.y + 25);
+                // Text in top pillar
+                ctx.fillText(p.label, p.x + PIPE_WIDTH/2, p.topHeight - 20);
+                // Text in bottom pillar
+                ctx.fillText(p.label, p.x + PIPE_WIDTH/2, bottomY + 30);
+                ctx.restore();
 
                 // Collision
-                let closestX = Math.max(obs.x, Math.min(player.x, obs.x + obs.width));
-                let closestY = Math.max(obs.y, Math.min(player.y, obs.y + obs.height));
-                let distSq = ((player.x - closestX)**2) + ((player.y - closestY)**2);
+                const birdCX = bird.x + bird.radius;
+                const birdCY = bird.y + bird.radius;
+                const testXTop = Math.max(p.x, Math.min(birdCX, p.x + PIPE_WIDTH));
+                const testYTop = Math.max(0, Math.min(birdCY, p.topHeight));
+                const testYBot = Math.max(bottomY, Math.min(birdCY, bottomY + bottomHeight));
+                
+                if (Math.hypot(birdCX - testXTop, birdCY - testYTop) < bird.radius - 2 || 
+                    Math.hypot(birdCX - testXTop, birdCY - testYBot) < bird.radius - 2) gameOver();
 
-                if (distSq < (player.radius * player.radius)) {
-                    gameOver();
-                }
-
-                if (obs.x + obs.width < 0) {
-                    obstacles.splice(index, 1);
-                    score += 10;
-                    scoreEl.innerText = score;
-                }
+                if (!p.passed && p.x + PIPE_WIDTH < bird.x) { score++; scoreEl.innerText = score; p.passed = true; }
+                if (p.x + PIPE_WIDTH < 0) pipes.splice(index, 1);
             });
 
             frame++;
@@ -275,15 +211,10 @@
         }
 
         function gameOver() {
-            gameActive = false;
-            overlay.style.display = 'flex';
-            statusText.innerText = "CRASHED! SCORE: " + score;
-            if (score > highScore) {
-                highScore = score;
-                highScoreEl.innerText = highScore;
-            }
+            gameActive = false; overlay.style.display = 'flex';
+            statusText.innerText = "SPRINT HALTED";
+            if (score > highScore) { highScore = score; highScoreEl.innerText = highScore; }
         }
-
         lucide.createIcons();
     </script>
 </body>
